@@ -3,6 +3,7 @@ import torch.nn as nn
 from torch.nn import functional as F
 import math
 from dataclasses import dataclass
+
 # import numpy as np
 
 from simpledataset import SimpleDataset

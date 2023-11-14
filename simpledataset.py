@@ -17,7 +17,9 @@ class SimpleDataset(torch.utils.data.Dataset):
             size (int, optional): Size of the dataset. Defaults to 100.
         """
         self._size = size
-        self._inputs = torch.tensor(np.random.randn(size, seq, d_model), dtype=torch.float32)
+        self._inputs = torch.tensor(
+            np.random.randn(size, seq, d_model), dtype=torch.float32
+        )
         self._labels = torch.tensor(np.random.randn(size, seq), dtype=torch.float32)
 
     def __len__(self):
@@ -26,8 +28,8 @@ class SimpleDataset(torch.utils.data.Dataset):
     def __getitem__(self, idx):
         return (self._inputs[idx], self._labels[idx])
         # return (
-            # torch.tensor(self._inputs[idx], dtype=torch.float32),
-            # self._labels[idx].astype("float32"),
+        # torch.tensor(self._inputs[idx], dtype=torch.float32),
+        # self._labels[idx].astype("float32"),
         # )
 
 
